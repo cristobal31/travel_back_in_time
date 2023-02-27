@@ -5,37 +5,39 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+puts "Yes"
+
 Event.destroy_all
 User.destroy_all
 
-daniel = User.create!(email: "danielpippino986@gmail.com", password: "123456")
-luca = User.create!(email: "lucaiscool@gmail.com", password: "12345678")
+
+daniel = User.create!(email: "danielpippino986@gmail.com", password: "123456", first_name: "Daniel", last_name: "Pippin")
+luca = User.create!(email: "lucaiscool@gmail.com", password: "12345678", first_name: "Luca", last_name: "Bonaparte")
 
 
-events = Event.create([{
-  user_id: 1,
-  category: "late modern",
-  era: "politics",
+events = Event.create!([{
+  user_id: User.all.sample.id,
+  category: "politics",
+  era: "late modern",
   name: "fall of berlin wall",
   year: "1989",
   price: 100,
-  description: "fall of berlin wall",
+  description: "fall of berlin wall"
 },
 
-
 {
-  user_id: 1,
+  user_id: User.all.sample.id,
   category: "nature",
   era: "prehistory",
-  name: "trex gunt",
+  name: "trex hunt",
   year: "2000000 bc",
   price: 200,
-  description: "hunting a trex",
+  description: "Watch a Trex hunting",
 },
 
 
 {
-  user_id: 2,
+  user_id: User.all.sample.id,
   category: "architecture",
   era: "ancient",
   name: "creation on the pyramids of gizah",
@@ -46,7 +48,7 @@ events = Event.create([{
 
 
 {
-  user_id: 2,
+  user_id: User.all.sample.id,
   category: "science",
   era: "late modern",
   name: "moonlanding",
@@ -56,7 +58,7 @@ events = Event.create([{
 },
 
 {
-  user_id: 1,
+  user_id: User.all.sample.id,
   category: "people",
   era: "late modern",
   name: "woodstock",
@@ -65,8 +67,9 @@ events = Event.create([{
   description: "Be part of the summer of love",
 },
 
+
 {
-  user_id: 2,
+  user_id: User.all.sample.id,
   category: "science",
   era: "late modern",
   name: "a lecture with albert einstein",
@@ -74,3 +77,5 @@ events = Event.create([{
   price: 400,
   description: "Spend a day with the smartest human of all time"
 }])
+
+puts "no"
