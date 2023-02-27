@@ -23,6 +23,6 @@ class EventsController < ApplicationController
   end
 
   def list_params
-    params.require(:event).permit(:name, :photo)
+    params.require(:event).permit(:name, :category, :era)
   end
 end
