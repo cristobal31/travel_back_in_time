@@ -16,8 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_161044) do
 
   create_table "bookings", force: :cascade do |t|
     t.boolean "accepted"
-    t.datetime "start_date"
-    t.datetime "end_date"
+    t.string "date"
     t.bigint "user_id", null: false
     t.bigint "event_id", null: false
     t.datetime "created_at", null: false
@@ -31,8 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_161044) do
     t.string "year"
     t.string "category"
     t.string "location"
-    t.string "description"
-    t.string "era"
     t.integer "price", null: false
     t.string "keyword"
     t.bigint "user_id", null: false
