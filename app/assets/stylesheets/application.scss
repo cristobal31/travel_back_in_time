@@ -12,6 +12,7 @@
 @import "pages/index";
 @import "components/card";
 @import "components/navbar";
+@import "components/footer";
 
 
 :root {
@@ -19,6 +20,7 @@
   --beige: #F1DBBF;
   --darkbrown: #AA5656;
   --lightbrown: #B99B6B;
+  --darkorange: #c56b16da;
 }
 
 body {
