@@ -5,6 +5,8 @@ class CreateEvents < ActiveRecord::Migration[7.0]
       t.string :year
       t.string :category
       t.string :location
+      t.string :description
+      t.string :era
       t.integer :price, null: false
       t.string :keyword
       t.references :user, null: false, foreign_key: true
