@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="position-relative">
+    <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('pyramid.jpg') %>)">
+      <h1><%= @event.name %></h1>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Description</th>
+            <td><%= @event.description %></td>
+          </tr>
+          <tr>
+            <th scope="row">Category</th>
+            <td><%= @event.category %></td>
+          </tr>
+          <tr>
+            <th scope="row">Year</th>
+            <td><%= @event.year %></td>
+          </tr>
+          <tr>
+            <th scope="row">Price</th>
+            <td><%= @event.price %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
