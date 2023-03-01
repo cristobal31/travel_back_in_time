@@ -4,13 +4,15 @@
   <%= link_to event_path(event) do%>
   <div class="card-event">
     <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
-        <div class="card-event-headline">
-          <h3><%= event.name %></h3>
-          <p>$ <%= event.price %></p>
+        <div class="card-event-headline"
+        <h3>
+        <strong><%= event.name.capitalize %></strong>
+        </h3>
+        <p>$ <%= event.price %></p>
         </div>
         <div class="card-event-infos">
-          <p><strong>Category:</strong> <%= event.category %></p>
-          <p><strong>Era:</strong> <%= event.era %></p>
+        <p><strong>Category:</strong> <%= event.category %></p>
+        <p><strong>Era:</strong> <%= event.era %></p>
         </div>
         <div class="card-event-infos">
         <p><strong>Year:</strong> <%= event.year %></p>

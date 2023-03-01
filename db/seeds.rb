@@ -15,8 +15,6 @@ luca = User.create!(email: "lucaiscool@gmail.com", password: "12345678", first_n
 
 
 
-
-
 berlin_wall = Event.create!(user_id: User.all.sample.id, category: "politics", era: "late modern", name: "fall of berlin wall", year: "1989", price: 100, description: "fall of berlin wall")
 file = URI.open("https://res.cloudinary.com/dxrk5d6qu/image/upload/v1677678043/timescape/berlin_wall_mrdcib.jpg")
 berlin_wall.photo.attach(io: file, filename: "berlin wall.jpeg", content_type: "image/jpeg")
