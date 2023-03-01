@@ -76,4 +76,6 @@ events = Event.create!([{
   description: "Spend a day with the smartest human of all time"
 }])
 
+
+
 puts "no"
