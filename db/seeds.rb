@@ -21,6 +21,8 @@ events = Event.create!([{
   year: "1989",
   price: 100,
   description: "fall of berlin wall"
+
+  
 },
 
 {

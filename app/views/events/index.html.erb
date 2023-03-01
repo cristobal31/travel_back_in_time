@@ -6,16 +6,16 @@
       <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
         <div class="card-event-headline">
         <h3>
-        <strong><%= event.name %></strong>
-       </h3>
-       <p>$ <%= event.price %></p>
-       </div>
-       <div class="card-event-infos">
-       <p><strong>Category:</strong> <%= event.category %></p>
-       <p><strong>Era:</strong> <%= event.era %></p>
-       </div>
-       <div class="card-event-infos">
-       <p><strong>Year:</strong> <%= event.year %></p>
+        <strong><%= event.name.capitalize %></strong>
+        </h3>
+        <p>$ <%= event.price %></p>
+        </div>
+        <div class="card-event-infos">
+        <p><strong>Category:</strong> <%= event.category %></p>
+        <p><strong>Era:</strong> <%= event.era %></p>
+        </div>
+        <div class="card-event-infos">
+        <p><strong>Year:</strong> <%= event.year %></p>
       </div>
   </div>
   <% end %>

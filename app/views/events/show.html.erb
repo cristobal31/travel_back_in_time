@@ -1,29 +1,30 @@
 <div class="container">
-  <div class="position-relative">
-    <div class="card-category card-large" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('pyramid.jpg') %>)">
-      <h1><%= @event.name %></h1>
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <th scope="row">Description</th>
-            <td><%= @event.description %></td>
-          </tr>
-          <tr>
-            <th scope="row">Category</th>
-            <td><%= @event.category %></td>
-          </tr>
-          <tr>
-            <th scope="row">Year</th>
-            <td><%= @event.year %></td>
-          </tr>
-          <tr>
-            <th scope="row">Price</th>
-            <td><%= @event.price %></td>
-          </tr>
-        </tbody>
-      </table>
-       <% if @booked %>
+  <div class="show-page">
+    <div class="show-event">
+      <div class="event-without-description">
+        <div>
+          <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
+        </div>
+        <div class="headline-keyinfo">
+          <div class="show-event-headline">
+            <h3><%= @event.name.capitalize %></h3>
+            <p>$ <%= @event.price %></p>
+          </div>
+          <div class="show-event-infos">
+            <p><strong>Category:</strong> <%= @event.category %></p>
+            <p><strong>Era:</strong> <%= @event.era %></p>
+            <p><strong>Year:</strong> <%= @event.year %></p>
+          </div>
+        </div>
+      </div>
+      <div class="show-event-description">
+        <p><strong>Description:</strong> <%= @event.description %></p>
+      </div>
+    </div>
 
+
+   <div class="booking-request">
+       <% if @booked %>
         <h3>This has been booked for <%= @booking.start_date  %></h3>
        <% else %>
         <h2 class="form-h2">Create a new booking:</h2>
@@ -33,7 +34,6 @@
           <%= f.button :submit, class: "btn btn-back" %>
         <% end %>
       <% end %>
-
-    </div>
+  </div>
   </div>
 </div>
