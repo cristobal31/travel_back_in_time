@@ -3,8 +3,8 @@
   <% @events.each do |event| %>
   <%= link_to event_path(event) do%>
   <div class="card-event">
-      <img src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
-        <div class="card-event-headline">
+    <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-event-headline"
         <h3>
         <strong><%= event.name.capitalize %></strong>
         </h3>
