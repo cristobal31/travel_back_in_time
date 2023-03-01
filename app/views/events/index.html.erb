@@ -4,9 +4,9 @@
   <%= link_to event_path(event) do%>
   <div class="card-event">
     <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
-        <div class="card-event-headline"
+        <div class="card-event-headline">
         <h3>
-        <strong><%= event.name.capitalize %></strong>
+        <%= event.name.capitalize %>
         </h3>
         <p>$ <%= event.price %></p>
         </div>
