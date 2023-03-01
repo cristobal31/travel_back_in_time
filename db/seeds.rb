@@ -10,7 +10,7 @@ puts "Yes"
 Event.destroy_all
 User.destroy_all
 
-daniel = User.create!(email: "danielpippino986@gmail.com", password: "123456", first_name: "Daniel", last_name: "Pippin")
+daniel = User.create!(email: "danielpippin986@gmail.com", password: "123456", first_name: "Daniel", last_name: "Pippin")
 luca = User.create!(email: "lucaiscool@gmail.com", password: "12345678", first_name: "Luca", last_name: "Bonaparte")
 
 
