@@ -12,6 +12,7 @@
 @import "pages/index";
 @import "components/card";
 @import "components/navbar";
+@import "components/footer";
 
 
 :root {
@@ -19,8 +20,10 @@
   --beige: #F1DBBF;
   --darkbrown: #AA5656;
   --lightbrown: #B99B6B;
+  --darkorange: #c56b16da;
 }
 
 body {
   background-color: #F1DBBF;
+  font-family: 'Times New Roman', Times, serif;
 }

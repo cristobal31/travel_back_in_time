@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  has_one_attached :photo
   belongs_to :user
   has_many :bookings, dependent: :destroy
   validates :category, inclusion: %w"[ people music science politics war nature architecture ]"
