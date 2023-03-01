@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: :index
   def show
     @event = Event.find(params[:id])
     if @event.bookings.where(user: current_user).any?
