@@ -15,10 +15,15 @@
 .card-event {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   margin: 10px;
   border-radius: 10px;
 }
+
+.card-event:hover {
+  transform: scale(1.1);
+  border: solid var(--darkbrown);
+  }
 
 .card-event > img {
   height: 200px;
@@ -26,12 +31,13 @@
   object-fit: cover;
 }
 
-.card-event h5 {
+.card-event h3 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
   text-decoration: none;
   color: black;
+  font-size: larger;
 }
 
 .card-event p {
@@ -40,6 +46,7 @@
   margin: 0;
   text-decoration: none;
   color: black;
+  font-size: medium;
 }
 
 

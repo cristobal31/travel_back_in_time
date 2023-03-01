@@ -11,3 +11,16 @@
 @import "components/index";
 @import "pages/index";
 @import "components/card";
+@import "components/navbar";
+
+
+:root {
+  --green: #698269;
+  --beige: #F1DBBF;
+  --darkbrown: #AA5656;
+  --lightbrown: #B99B6B;
+}
+
+body {
+  background-color: #F1DBBF;
+}
