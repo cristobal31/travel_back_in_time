@@ -16,6 +16,9 @@
         </div>
         <div class="card-event-infos">
         <p><strong>Year:</strong> <%= event.year %></p>
+        <a data-turbo-method="delete" data-turbo-confirm="Are you sure?" href="/restaurants/6">
+  Delete
+</a>
       </div>
   </div>
   <% end %>
