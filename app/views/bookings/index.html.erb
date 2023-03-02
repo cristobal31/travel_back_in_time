@@ -1,25 +1,53 @@
 <div class="container">
+ <h2 class="m-3">My Bookings:</h2>
 <div class="events">
-  <% @bookings.each do |booking| %>
-  <div class="card-event">
-    <%= cl_image_tag booking.event.photo.key, height: 300, width: 400, crop: :fill %>
-        <div class="card-event-headline">
-        <h3>
-        <%= booking.event.name.capitalize %>
-        </h3>
-        <p>$ <%= booking.event.price %></p>
-        </div>
-        <div class="card-event-infos">
-        <p><strong>Category:</strong> <%= booking.event.category %></p>
-        <p><strong>Era:</strong> <%= booking.event.era %></p>
-        </div>
-        <div class="card-event-infos">
-        <p><strong>Year:</strong> <%= booking.event.year %></p>
+    <% @bookings.each do |booking| %>
+      <div class="card-event">
+        <%= cl_image_tag booking.event.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="card-event-headline">
+            <h3>
+            <%= booking.event.name.capitalize %>
+            </h3>
+            <p>$ <%= booking.event.price %></p>
+            </div>
+            <div class="card-event-infos">
+            <p><strong>Category:</strong> <%= booking.event.category %></p>
+            <p><strong>Era:</strong> <%= booking.event.era %></p>
+            </div>
+            <div class="card-event-infos">
+            <p><strong>Year:</strong> <%= booking.event.year %></p>
+          </div>
+            <div class="card-event-infos">
+            <h3 id="booking-confirmation">TimeScape booked!
+            </div>
+           <div>
+            <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+         </div>
       </div>
-        <div class="card-event-infos">
-        <h3 id="booking-confirmation">TimeScape booked!
-        </div>
+    <% end %>
+   </div>
+ </div>
+<h2 class="m-3">My Events:</h2>
+<div class="events">
+    <% @events.each do |event| %>
+     <%= link_to event_path(event) do%>
+      <div id="card-event-id" class="card-event">
+        <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
+            <div class="card-event-headline">
+            <h3>
+            <%= event.name.capitalize %>
+            </h3>
+            <p>$ <%= event.price %></p>
+            </div>
+            <div class="card-event-infos">
+            <p><strong>Category:</strong> <%= event.category %></p>
+            <p><strong>Era:</strong> <%= event.era %></p>
+            </div>
+            <div class="card-event-infos">
+            <p><strong>Year:</strong> <%= event.year %></p>
+          </div>
+      </div>
+    <% end %>
+   <% end %>
   </div>
-  <% end %>
-</div>
 </div>
