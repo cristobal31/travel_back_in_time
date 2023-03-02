@@ -23,17 +23,17 @@
     </div>
 
 
-   <div class="booking-request">
-       <% if @booked %>
-        <h3>This has been booked for <%= @booking.start_date  %></h3>
-       <% else %>
-        <h2 class="form-h2">Create a new booking:</h2>
+    <div class="booking-request">
+        <% if @booked %>
+          <h3>This has been booked for <%= @booking.start_date %></h3>
+        <% else %>
+          <h2 class="form-h2">Create a new booking:</h2>
         <%= simple_form_for [@event, @booking] do |f| %>
           <%= f.input :start_date, as: :date, html5: true %>
           <%= f.input :end_date, as: :date, html5: true %>
           <%= f.button :submit, class: "btn btn-back" %>
         <% end %>
       <% end %>
-  </div>
+    </div>
   </div>
 </div>
