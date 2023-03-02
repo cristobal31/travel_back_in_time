@@ -1,0 +1,24 @@
+<div class="container">
+<div class="events">
+  <% @bookings.each do |booking| %>
+  <div class="card-event">
+    <%= cl_image_tag booking.event.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-event-headline">
+        <h3>
+        <%= booking.event.name.capitalize %>
+        </h3>
+        <p>$ <%= booking.event.price %></p>
+        </div>
+        <div class="card-event-infos">
+        <p><strong>Category:</strong> <%= booking.event.category %></p>
+        <p><strong>Era:</strong> <%= booking.event.era %></p>
+        </div>
+        <div class="card-event-infos">
+        <p><strong>Year:</strong> <%= booking.event.year %></p>
+      </div>
+        <div class="card-event-infos">
+        <h3 id="booking-confirmation">TimeScape booked!
+        </div>
+  </div>
+  <% end %>
+</div>
