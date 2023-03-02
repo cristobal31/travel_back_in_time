@@ -9,7 +9,9 @@
           <%= f.input :year, placeholder: 'Enter which year' %>
           <%= f.input :category, placeholder: 'Enter what category' %>
           <%= f.input :era, placeholder: 'Enter era' %>
-          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+          <%= f.input :price, placeholder: 'Enter a price' %>
+          <%= f.input :photo, class: "photo", as: :file %>
+          
           <%= f.submit class: 'btn btn-primary' %>
         <% end %>
       </div>
