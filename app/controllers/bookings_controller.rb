@@ -1,8 +1,7 @@
 class BookingsController < ApplicationController
 
-  def show
+  def index
     @bookings = Booking.where(user: current_user)
-    @event = Event.find(params[:event_id])
   end
 
 
