@@ -12,7 +12,19 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    if params[:query].present?
+      sql_query = <<~SQL
+        event.title @@ :query
+        OR category @@ :query
+        OR era @@ :query
+        OR name @@ :query
+        OR year @@ :query
+        OR price @@ :query
+      SQL
+      @events = Event.joins(:name).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @events = Event.all
+    end
   end
 
 
