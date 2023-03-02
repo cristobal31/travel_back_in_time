@@ -7,18 +7,19 @@
         <div class="card-event-headline">
           <h3>
         <%= event.name.capitalize %>
-          </h3>
-          <p>$ <%= event.price %></p>
-          </div>
-          <div class="card-event-infos">
-          <p><strong>Category:</strong><%= event.category %></p>
-          <p><strong>Era:</strong> <%= event.era %></p>
-          </div>
-          <div class="card-event-infos">
-          <p><strong>Year:</strong> <%= event.year %></p>
+        </h3>
+        <p>$ <%= event.price %></p>
         </div>
-      </div>
-    <% end %>
+        <div class="card-event-infos">
+        <p><strong>Category:</strong> <%= event.category %></p>
+        <p><strong>Era:</strong> <%= event.era %></p>
+        </div>
+        <div class="card-event-infos">
+        <p><strong>Year:</strong> <%= event.year %></p>
+        <%# <%= link_to "Delete", event_path(event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+  </div>
+  <% end %>
   <% end %>
 </div>
   <div class="d-flex align-items-center justify-content-between mb-3">

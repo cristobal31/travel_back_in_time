@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  # delete "events/:id", to: "events#destroy"
 
 end
