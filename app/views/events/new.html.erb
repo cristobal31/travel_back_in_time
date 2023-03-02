@@ -2,18 +2,18 @@
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
       <div class="bg-white rounded p-3 shadow">
-        <h1><strong> Your new Event</strong></h1>
-        <%= simple_form_for @event do |f| %>
-          <%= f.hidden_field :user_id, value: @event.id %>
-          <%= f.input :name, placeholder: 'Enter the name of the event' %>
-          <%= f.input :year, placeholder: 'Enter which year' %>
-          <%= f.input :category, placeholder: 'Enter what category' %>
-          <%= f.input :era, placeholder: 'Enter era' %>
-          <%= f.input :price, placeholder: 'Enter a price' %>
-          <%= f.input :photo, class: "photo", as: :file %>
-          
-          <%= f.submit class: 'btn btn-primary' %>
-        <% end %>
+          <h2 class="text-center pb-2"><strong> Your new Event</strong></h2>
+            <%= simple_form_for @event do |f| %>
+              <%= f.hidden_field :user_id, value: @event.id %>
+              <%= f.input :name, placeholder: 'Enter the name of the event' %>
+              <%= f.input :year, placeholder: 'Enter which year' %>
+              <%= f.input :price, placeholder: 'Enter a price' %>
+              <%= f.input :description, as: :text, :input_html => { class: 'test', :cols => 2, :rows => 2 } %>
+              <%= f.input :category, collection: %w"people music science politics war nature architecture" %>
+              <%= f.input :era, collection: %w"prehistory ancient post-classical early-modern late-modern" %>
+              <%= f.input :photo, class: "photo", as: :file %>
+              <%= f.submit class: 'btn btn-primary' %>
+            <% end %>
       </div>
     </div>
   </div>
