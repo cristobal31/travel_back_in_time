@@ -31,13 +31,14 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    @event = Events.find(params[:id])
+    @event = Event.find(params[:id])
     @event.destroy
+    redirect_to events_path, status: :see_other
   end
 
   private
 
   def event_params
-    params.require(:event).permit(:name, :year, :category, :price, :era, :user_id)
+    params.require(:event).permit(:name, :year, :category, :price, :era, :user_id, :rich)
   end
 end

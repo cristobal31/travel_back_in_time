@@ -14,8 +14,9 @@
             <p><strong>Category:</strong> <%= @event.category %></p>
             <p><strong>Era:</strong> <%= @event.era %></p>
             <p><strong>Year:</strong> <%= @event.year %></p>
-              <p><strong>Description:</strong> <%= @event.description %></p>
+            <p><strong>Description:</strong> <%= @event.description %></p>
           </div>
+
         </div>
       </div>
     </div>
@@ -32,7 +33,9 @@
         <%= simple_form_for [@event, @booking] do |f| %>
           <%= f.input :start_date, as: :date, html5: true %>
           <%= f.input :end_date, as: :date, html5: true %>
+           <%= f.input :rich  %>
           <%= f.button :submit, class: "btn btn-back" %>
+
         <% end %>
       <% end %>
   </div>
