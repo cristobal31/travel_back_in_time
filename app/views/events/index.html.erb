@@ -2,7 +2,7 @@
 <div class="events">
   <% @events.each do |event| %>
   <%= link_to event_path(event) do%>
-  <div class="card-event">
+  <div id="card-event-id" class="card-event">
     <%= cl_image_tag event.photo.key, height: 300, width: 400, crop: :fill %>
         <div class="card-event-headline">
         <h3>
@@ -16,7 +16,8 @@
         </div>
         <div class="card-event-infos">
         <p><strong>Year:</strong> <%= event.year %></p>
-      </div>
+        <%# <%= link_to "Delete", event_path(event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %> 
+        </div>
   </div>
   <% end %>
   <% end %>

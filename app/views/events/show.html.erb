@@ -8,30 +8,34 @@
         <div class="headline-keyinfo">
           <div class="show-event-headline">
             <h3><%= @event.name.capitalize %></h3>
-            <p>$ <%= @event.price %></p>
+            <p>$<%= @event.price %></p>
           </div>
           <div class="show-event-infos">
             <p><strong>Category:</strong> <%= @event.category %></p>
             <p><strong>Era:</strong> <%= @event.era %></p>
             <p><strong>Year:</strong> <%= @event.year %></p>
+            <p><strong>Description:</strong> <%= @event.description %></p>
           </div>
+
         </div>
-      </div>
-      <div class="show-event-description">
-        <p><strong>Description:</strong> <%= @event.description %></p>
       </div>
     </div>
 
 
    <div class="booking-request">
        <% if @booked %>
-        <h3>This has been booked for <%= @booking.start_date  %></h3>
+       <div id="booked">
+        <h5 >TimeScape booked!  </h5>
+        <p>You will travel back in time to this event on <%=  @booking.start_date.strftime("%d.%m.%Y") %></p>
+        </div>
        <% else %>
         <h2 class="form-h2">Create a new booking:</h2>
         <%= simple_form_for [@event, @booking] do |f| %>
           <%= f.input :start_date, as: :date, html5: true %>
           <%= f.input :end_date, as: :date, html5: true %>
+           <%= f.input :rich  %>
           <%= f.button :submit, class: "btn btn-back" %>
+
         <% end %>
       <% end %>
   </div>
