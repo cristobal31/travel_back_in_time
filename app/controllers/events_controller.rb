@@ -13,15 +13,8 @@ class EventsController < ApplicationController
 
   def index
     if params[:query].present?
-      sql_query = <<~SQL
-        event.title @@ :query
-        OR category @@ :query
-        OR era @@ :query
-        OR name @@ :query
-        OR year @@ :query
-        OR price @@ :que
-      SQL
-      @events = Event.joins(:name).where(sql_query, query: "%#{params[:query]}%")
+      sql_query = "name ILIKE :query OR category ILIKE :query OR era ILIKE :query"
+      @events = Event.where(sql_query, query: "%#{params[:query]}%")
     else
       @events = Event.all
     end
@@ -35,7 +28,6 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     if @event.save
-      raise
       redirect_to events_path(@event)
     else
       render :new, status: :unprocessable_entity
