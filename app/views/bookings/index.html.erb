@@ -20,9 +20,13 @@
             <div class="card-event-infos">
             <h3 id="booking-confirmation">TimeScape booked!
             </div>
+           <div>
+            <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+         </div>
       </div>
     <% end %>
-</div>
+   </div>
+ </div>
 <h2 class="m-3">My Events:</h2>
 <div class="events">
     <% @events.each do |event| %>

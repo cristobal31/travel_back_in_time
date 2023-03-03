@@ -12,7 +12,12 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.all
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR category ILIKE :query OR era ILIKE :query"
+      @events = Event.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @events = Event.all
+    end
   end
 
   def new
@@ -21,18 +26,16 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.user = current_user
     if @event.save
-      redirect_to event_path(@event)
+      redirect_to events_path(@event)
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @event = Event.find(params[:id])
+    @event = Events.find(params[:id])
     @event.destroy
-    redirect_to events_path, status: :see_other
   end
 
   private
