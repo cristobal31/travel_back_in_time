@@ -8,7 +8,7 @@
             <%= f.input :name, placeholder: 'Enter the name of the event' %>
             <%= f.input :year, placeholder: 'Enter which year' %>
             <%= f.input :price, placeholder: 'Enter a price' %>
-            <%= f.input :description, as: :text, :input_html => { class: 'test', :cols => 2, :rows => 2 } %>
+            <%= f.input :description, as: :string, :input_html => { class: 'test', :cols => 2, :rows => 2 } %>
             <%= f.input :category, collection: %w"people music science politics war nature architecture" %>
             <%= f.input :era, collection: %w"prehistory ancient post-classical early-modern late-modern" %>
             <%= f.input :photo, class: "photo", as: :file %>
