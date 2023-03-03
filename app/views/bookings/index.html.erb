@@ -18,7 +18,7 @@
               <p><strong>Year:</strong> <%= booking.event.year %></p>
             </div>
               <div class="card-event-infos">
-              <h3 id="booking-confirmation">TimeScape booked!
+              <p id="booking-confirmation"> <strong><em> TimeScape booked! Date: <%=booking.start_date.strftime("%d.%m.%Y") %></em></strong> </p>
               </div>
             <div>
               <%= link_to "Cancel", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-primary m-2 mb-3" %>
