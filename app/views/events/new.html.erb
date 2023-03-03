@@ -4,7 +4,6 @@
       <div class="bg-white rounded p-3 shadow">
         <h2 class="text-center pb-2"><strong> Your new Event</strong></h2>
           <%= simple_form_for @event do |f| %>
-            <%= f.hidden_field :user_id, value: @event.id %>
             <%= f.input :name, placeholder: 'Enter the name of the event' %>
             <%= f.input :year, placeholder: 'Enter which year' %>
             <%= f.input :price, placeholder: 'Enter a price' %>
